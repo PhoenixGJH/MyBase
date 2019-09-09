@@ -7,17 +7,12 @@ import io.reactivex.disposables.Disposable
  * @date 2019/2/26
  */
 abstract class BasePresenter<V : BaseView>(v: V) {
-    protected lateinit var view: V
+    protected var view: V = v
 
     private var compositeDisposable: CompositeDisposable?
 
     init {
         this.compositeDisposable = CompositeDisposable()
-        attachView(v)
-    }
-
-    open fun attachView(v: V) {
-        this.view = v
     }
 
     open fun detach() {

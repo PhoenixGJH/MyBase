@@ -1,9 +1,9 @@
 package com.phoenix.base
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.annotation.StringRes
-import android.support.v4.app.Fragment
+import androidx.annotation.LayoutRes
+import androidx.annotation.StringRes
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import android.widget.Toast
  * @author mfyk
  * @date 2019/4/11
  */
-abstract class BaseFragment : Fragment(), BaseView {
+abstract class BaseFragment : androidx.fragment.app.Fragment(), BaseView {
 
     /**
      * 设置LayoutId

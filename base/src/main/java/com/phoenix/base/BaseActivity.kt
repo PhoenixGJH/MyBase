@@ -1,13 +1,11 @@
 package com.phoenix.base
 
 import android.os.Bundle
-import android.support.annotation.LayoutRes
-import android.support.annotation.StringRes
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import androidx.annotation.LayoutRes
+import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.Toast
-import com.phoenix.base.R
 
 /**
  * @date 2019/4/11
@@ -26,19 +24,6 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         super.onCreate(savedInstanceState)
         setContentView(getContentId())
         init()
-        initActionBar()
-    }
-
-    protected fun initActionBar() {
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        if (toolbar != null) {
-            setSupportActionBar(toolbar)
-        }
-        val actionBar = supportActionBar
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(true)
-            actionBar.setDisplayHomeAsUpEnabled(true)
-        }
     }
 
     protected abstract fun init()
@@ -48,9 +33,6 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     }
 
     override fun toast(text: CharSequence) {
-        if (text == null) {
-            return
-        }
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 

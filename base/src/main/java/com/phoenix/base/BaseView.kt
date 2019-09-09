@@ -1,6 +1,6 @@
 package com.phoenix.base
 
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 
 /**
  * @date 2019/2/26
